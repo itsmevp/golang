@@ -32,3 +32,5 @@ go test -v -coverprofile=cover.txt .
 ```
 go tool cover -html=cover.txt -o cover.html
 ```
+
+#### To test all the packages in a module, you can use `go test ./...` command in which `./...` matches all the packages in the module.
