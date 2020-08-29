@@ -15,7 +15,7 @@ go test -v -run TestSomeFunction
 ```
 go test -v hello.go hello_test.go
 ```
-**When you have test cases (`_test.go` files) in your executable(`main`) package, you can’t simply execute `go run *.go` to run the project.**
+**When you have test cases (`_test.go` files) in your executable(`main`) package, you can’t simply execute `go run *.go` to run the project.**  
 **`*.go` part also matches the test files (`_test.go` files) and go run command can’t run them and returns `go run: cannot run *_test.go` files (`hello_test.go`) error.**
 
 #### Go provide built-in functionality to check your code coverage.
