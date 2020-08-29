@@ -37,3 +37,22 @@ go tool cover -html=cover.txt -o cover.html
 
 #### There are two ways to run tests `local directory mode` and `package list mode`.
 - **local directory mode:**
+    - Local directory mode occurs when `go test` is invoked with no package arguments.
+    - In this mode, caching is disabled.
+    - In this mode, `go test` compiles the package sources and tests found in the current directory and then runs the resulting test binary.
+    - Example: `go test` or `go test -v`
+- **Package list mode:**
+    - Package list mode occurs when go test is invoked with explicit package arguments.
+    - In this mode go test caches successfully package test results to avoid unnecessary repeated running of tests.
+    - Whenever Go run tests on a package, Go creates a test binary and runs it. 
+    - You can output this binary using -c flag with go test command. This will output .test file but won’t run it. 
+    - Additionally, rename this file using -o flag.
+
+```
+v01@Vishnus-Mac go_testing$ go test -v -c
+v01@Vishnus-Mac go_testing$ ./go_testing.test -test.v
+=== RUN   TestGreet
+--- PASS: TestGreet (0.00s)
+    hello_test.go:12: Expected Hello Dude! and got Hello Dude!
+PASS
+```
