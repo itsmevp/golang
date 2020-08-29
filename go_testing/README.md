@@ -17,3 +17,18 @@ go test -v hello.go hello_test.go
 ```
 #### When you have test cases (`_test.go` files) in your executable(`main`) package, you can’t simply execute `go run *.go` to run the project.
 #### `*.go` part also matches the test files (`_test.go` files) and go run command can’t run them and returns `go run: cannot run *_test.go` files (`hello_test.go`) error.
+
+#### Go provide built-in functionality to check your code coverage.
+```
+go test -v -cover .
+```
+
+#### To check what did we miss to cover in the test we use `-coverprofile` option.
+```
+go test -v -coverprofile=cover.txt .
+```
+
+#### Out of many built in tools, go provides `cover` tool to analyze the code coverage details.
+```
+go tool cover -html=cover.txt -o cover.html
+```

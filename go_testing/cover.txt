@@ -1,0 +1,5 @@
+mode: set
+/Users/v01/MyCodeRepos/github/golang/go_testing/hello.go:7.41,8.16 1 1
+/Users/v01/MyCodeRepos/github/golang/go_testing/hello.go:11.2,11.38 1 0
+/Users/v01/MyCodeRepos/github/golang/go_testing/hello.go:8.16,10.3 1 1
+/Users/v01/MyCodeRepos/github/golang/go_testing/main.go:7.13,11.2 3 0
