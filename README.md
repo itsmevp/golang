@@ -14,4 +14,4 @@
   - For multi-file packages, the package comment only needs to be present in one file, and any one will do.
   - Inside a package, any comment immediately preceding a top-level declaration serves as a doc comment for that declaration.
   - Every exported (capitalized) name in a program should have a doc comment.
-  - go doc -all [package name] | grep -i "name of the function"
+  - `go doc -all [package name] | grep -i "name of the function"`
