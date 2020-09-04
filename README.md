@@ -15,3 +15,4 @@
   - Inside a package, any comment immediately preceding a top-level declaration serves as a doc comment for that declaration.
   - Every exported (capitalized) name in a program should have a doc comment.
   - `go doc -all [package name] | grep -i "name of the function"`
+  - `godoc -http=:6060` to start an local http documentation server
