@@ -7,7 +7,7 @@
   - Parentheses: Go needs fewer parentheses, control structures (if, for, switch) do not have parentheses in their syntax.
 
 **Commentary:**
-  - Block comments: "/* */".
+  - Block comments: "/* */"
   - Line comments: //
   - godoc is a program and a web server processes Go source files to extract documentation about the contents of the package.
   - Every package should have a package comment, a block comment preceding the package clause.
