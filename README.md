@@ -18,16 +18,22 @@
 
 **Naming:**
   - The visiblity of a name outside a package is determined by whether it's first character is upper case or not.
-  - **Packaging:**
+  - *Packaging:*
     - When a package is imported, the package name becomes an accessor for the contents.
     - By convention, packages are given lower case , single-word names; there should be no need for underscores or mixedCaps.
     - The function to make new instances of ring.Ring—which is the definition of a constructor in Go—would normally be called NewRing, 
       but since Ring is the only type exported by the package, and since the package is called ring, it's called just New, which clients of the package see as ring.New.
-  - **Getters:**
+  - *Getters:*
     - Go doesn't provide automatic support for getters and setters.
     - If you have a field called owner (lower case, unexported), the getter method should be called Owner (upper case, exported), not GetOwner.
     - A setter function, if needed, will likely be called SetOwner.
-  - **Interface Names:**
+  - *Interface Names:*
     - By convention, one-method interfaces are named by the method name plus an -er suffix or similar modification to construct an agent noun: Reader, Writer, Formatter, CloseNotifier etc.
-  - **MixedCaps:**
+  - *MixedCaps:*
     - Finally, the convention in Go is to use MixedCaps or mixedCaps rather than underscores to write multiword names.
+
+**Semicolon's:**
+  - The rule is:
+    - If the last token before a newline is an identifier (which includes words like int and float64), a basic literal such as a number or string constant, or one of the tokens
+      `break continue fallthrough return ++ -- ) }` the lexer always inserts a semicolon after the token.
+    - This could be summarized as, “if the newline comes after a token that could end a statement, insert a semicolon”.
