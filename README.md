@@ -45,3 +45,8 @@
     if and switch accept an optional initialization statement like that of for;
     break and continue statements take an optional label to identify what to break or continue;
     and there are new control structures including a type switch and a multiway communications multiplexer, select.
+  - `for init; condition; post { }` like a C for loop
+  - `for condition { }` like a C while loop
+  - `for { }` Like a C for(;;)
+  - Go has no `,` operator
+  - `++` and `--` are statements not expressions
