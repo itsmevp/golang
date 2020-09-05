@@ -37,3 +37,11 @@
     - If the last token before a newline is an identifier (which includes words like int and float64), a basic literal such as a number or string constant, or one of the tokens
       `break continue fallthrough return ++ -- ) }` the lexer always inserts a semicolon after the token.
     - This could be summarized as, “if the newline comes after a token that could end a statement, insert a semicolon”.
+
+**Control Structures:**
+  - There is no do or while loop,
+    only a slightly generalized for;
+    switch is more flexible;
+    if and switch accept an optional initialization statement like that of for;
+    break and continue statements take an optional label to identify what to break or continue;
+    and there are new control structures including a type switch and a multiway communications multiplexer, select.
