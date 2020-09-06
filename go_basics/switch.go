@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"math/rand"
 )
 
@@ -46,7 +47,7 @@ func main() {
 	num := 57
 	switch {
 	case num > 50:
-		fmt.Printf("%v is greater than %v\n",num, 50)
+		fmt.Printf("%v is greater than %v\n", num, 50)
 	}
 
 	// Fallthrough
@@ -86,14 +87,14 @@ func main() {
 	}
 
 	// Lables in switch
-	someLabel:
-		for {
-			switch i := rand.Intn(100); {
-			case i%2 == 0:
-				fmt.Printf("Generated even number %d", i)
-				break someLabel
-			}
+someLabel:
+	for {
+		switch i := rand.Intn(100); {
+		case i%2 == 0:
+			fmt.Printf("Generated even number %d", i)
+			break someLabel
 		}
-	// Please note that if the break statement is used without the label, the switch statement will only be broken and the loop will continue running. 
+	}
+	// Please note that if the break statement is used without the label, the switch statement will only be broken and the loop will continue running.
 	// So labeling the loop and using it in the break statement inside the switch is necessary to break the outer for loop.
 }
