@@ -5,7 +5,7 @@
   - **Encoding JSON:**
     - `func Marshal(v interface{}) ([]byte, error)`
     - Converting an object to a JSON string, v can be a map or a struct.
-    - If you want to format the JSON with newlines and indentation, you can use json.MarshalIndent function which internally calls the Marshal function. This function takes the prefix and indentation as the argument.
+    - If you want to format the JSON with newlines and indentation, you can use `json.MarshalIndent` function which internally calls the Marshal function. This function takes the prefix and indentation as the argument.
     - The Marshal function only considers the exported fields for the encoding.
     - We can also encode map data type into JSON data.
     - The necessary condition is that map keys should be either string or int.
