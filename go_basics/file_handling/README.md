@@ -1,4 +1,4 @@
-- Working with low level api's
+- **Working with low level api's**
   - In go the file mode value is represented by `os.FileMode` type, which is derived from `uint32`
   - `os` file package provides a `File.Chmod()` function to change the permission of a file, which takes numeric file mode value of type `os.FileMode`
   - **File Open-time Flags**
@@ -18,3 +18,11 @@
     - The `os.OpenFile` is a generalized function to open a file that provides control over open-time flags and the file-mode.
     - `func Remove(path string) error` This function deletes a file from the disk at a given path provided by the path argument. This function returns an *os.PathError error if the file is missing or if the path is a non-empty directory.
     - However, you can use `os.RemoveAll` function to remove a directory (or a file) and all its children (directory content). If the path does not exist, it does nothing and returns a nil error.
+    
+- **io/ioutil package**
+  - Important functions from **io/ioutil package** package.
+    - `func ReadDir(dirname string) ([]os.FileInfo, error)` function returns the information about files contained in a directory.
+    - If you need to list the files in a directory filtered by a glob pattern, then you should use `func Glob(pattern string) (matches []string, err error)`.
+    - `func ReadFile(filepath string) ([]byte, error)` function returns the content of the file as an array of bytes.
+    - `func WriteFile(filepath string, data []byte, perm os.FileMode) error` If a file with the filepath does not exist, it will be created. If the file already exists, the file’s content will be wiped out (truncated) before writing new content.
+    - 
