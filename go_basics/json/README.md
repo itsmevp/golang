@@ -1,0 +1,20 @@
+- Working with JSON in golang
+  - A JSON can represent a dictionary or a list and items can be any supported data types.
+  - In Go, the closest we can get to JSON representation is through map or struct data types.
+  - JSON supports primarily 6 data types viz. `string`, `number`, `boolean`, `null`, `array` and `object`.
+  - **Encoding JSON:**
+    - `func Marshal(v interface{}) ([]byte, error)`
+    - Converting an object to a JSON string, v can be a map or a struct.
+    - If you want to format the JSON with newlines and indentation, you can use json.MarshalIndent function which internally calls the Marshal function. This function takes the prefix and indentation as the argument.
+    - The Marshal function only considers the exported fields for the encoding.
+    - We can also encode map data type into JSON data.
+    - The necessary condition is that map keys should be either string or int.
+    - If a value is a pointer, then the value of the pointer is used for the marshaling.
+    - If a value is an interface, then the concrete value of the interface is used for the marshaling.
+    - If a promoted field name conflicts with the field name from the parent structure, then the least nested field is selected for the marshaling.
+    - A structure can have an anonymously nested structure. In such a case, the fields of that structure (as well as methods) are promoted to the parent structure.
+  - **Data Type Conversion:**
+    - Sometimes, we do not want to encode a field value as it is but to provide a custom value for marshaling. 
+    - This can be achieved by implementing `json.Marshaler` or `encoding.TextMarshaler` interface.
+    - If a field’s value implements one of the above interfaces, then Marshal function won’t consider the field’s value for marshaling and instead use the value returned by the method MarshalJSON or MarshalText method.
+    - https://play.golang.org/p/xxg31Vd2i1d is a nice example to understand Marshaler interfaces.
