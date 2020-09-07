@@ -11,3 +11,6 @@
     - In a Unix-like operating system, the first three file descriptors represent Standard Streams.
     - Hence, fd is `0` for `STDIN`, `1` for `STDOUT` and `2` for `STDERR`.
     - Whenever we create a new file or open an existing, our operating system adds the entry in the table of the open file and returns the file descriptor to work with.
+  - **Working with a file**
+    - The `os.File` structure type represents an open file in Go.
+    - 
