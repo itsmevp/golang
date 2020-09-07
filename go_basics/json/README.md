@@ -18,3 +18,8 @@
     - This can be achieved by implementing `json.Marshaler` or `encoding.TextMarshaler` interface.
     - If a field’s value implements one of the above interfaces, then Marshal function won’t consider the field’s value for marshaling and instead use the value returned by the method MarshalJSON or MarshalText method.
     - https://play.golang.org/p/xxg31Vd2i1d is a nice example to understand Marshaler interfaces.
+  - **JSON Tags:**
+    - *omitempty* option specifies that the field should be omitted from the encoding if the field has an empty value.
+    - *string* option signals that a field is stored as JSON inside a JSON-encoded string.
+    - We can use `-` as the options value, if we want to ignore a field unconditionally.
+    - However, `-` can also be a valid JSON element key, hence `-`, value will specify that we want the field name to be `-`.
