@@ -13,4 +13,8 @@
     - Whenever we create a new file or open an existing, our operating system adds the entry in the table of the open file and returns the file descriptor to work with.
   - **Working with a file**
     - The `os.File` structure type represents an open file in Go.
-    - 
+    - This structure doesn’t have any public field but it provides few methods to read and write the file’s content.
+    - The `os.Open` opens an existing file from the disk with os.O_RDONLY open-time flag. If the file does not exist, it returns an error of type *os.PathError.
+    - The `os.OpenFile` is a generalized function to open a file that provides control over open-time flags and the file-mode.
+    - `func Remove(path string) error` This function deletes a file from the disk at a given path provided by the path argument. This function returns an *os.PathError error if the file is missing or if the path is a non-empty directory.
+    - However, you can use `os.RemoveAll` function to remove a directory (or a file) and all its children (directory content). If the path does not exist, it does nothing and returns a nil error.
