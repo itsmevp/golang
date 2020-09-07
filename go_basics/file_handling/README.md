@@ -25,4 +25,3 @@
     - If you need to list the files in a directory filtered by a glob pattern, then you should use `func Glob(pattern string) (matches []string, err error)`.
     - `func ReadFile(filepath string) ([]byte, error)` function returns the content of the file as an array of bytes.
     - `func WriteFile(filepath string, data []byte, perm os.FileMode) error` If a file with the filepath does not exist, it will be created. If the file already exists, the file’s content will be wiped out (truncated) before writing new content.
-    - 
