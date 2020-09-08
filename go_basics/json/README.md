@@ -36,4 +36,9 @@
       - A JSON null value is stored as nil value.
       - A JSON array value is stored as a slice of type []interface{}.
       - A JSON object value is stored as a map of type map[string]interface{}.
- 
+  - Encoder / Decoder
+    - Go provides `json/Encoder` and `json/Decoder` structure types to encode JSON from a data stream and decode JSON to a data stream. 
+    - **Encoder:**
+      - The json/Encoder structure type lets you create a struct that holds a `io.Writer` object and provides `Encode()` method to encode JSON from an object and write to this io.Writer object.
+    - **Decoder:**
+      - The json/Decoder structure type lets you create a struct that holds a `io.Reader` object and provides `Decode()` method to decode JSON from this io.Writer object and write to an object.
