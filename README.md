@@ -18,18 +18,18 @@
 
 **Naming:**
   - The visiblity of a name outside a package is determined by whether it's first character is upper case or not.
-  - *Packaging:*
+  - **Packaging:**
     - When a package is imported, the package name becomes an accessor for the contents.
     - By convention, packages are given lower case , single-word names; there should be no need for underscores or mixedCaps.
     - The function to make new instances of ring.Ring—which is the definition of a constructor in Go—would normally be called NewRing, 
       but since Ring is the only type exported by the package, and since the package is called ring, it's called just New, which clients of the package see as ring.New.
-  - *Getters:*
+  - **Getters:**
     - Go doesn't provide automatic support for getters and setters.
     - If you have a field called owner (lower case, unexported), the getter method should be called Owner (upper case, exported), not GetOwner.
     - A setter function, if needed, will likely be called SetOwner.
-  - *Interface Names:*
+  - **Interface Names:**
     - By convention, one-method interfaces are named by the method name plus an -er suffix or similar modification to construct an agent noun: Reader, Writer, Formatter, CloseNotifier etc.
-  - *MixedCaps:*
+  - **MixedCaps:**
     - Finally, the convention in Go is to use MixedCaps or mixedCaps rather than underscores to write multiword names.
 
 **Semicolon's:**
@@ -50,3 +50,13 @@
   - `for { }` Like a C for(;;)
   - Go has no `,` operator
   - `++` and `--` are statements not expressions
+
+**Make vs New**
+  - `new(T)` Allocates memory, and sets it to the `zero value` for type `T` that is `0` for `int`, `""` for `string` and `nil` for referenced types `(slice, map, chan)`.
+  - Note that referenced types are just pointers to some underlying data structures, which won't be created by `new(T)`.
+    - `Example:` in case of slice, the underlying array won't be created, thus `new([]int)` returns a pointer to nothing.
+  - `make(T)` Allocates memory for referenced data types `(slice, map, chan)`, plus initializes their underlying data structures.
+  - `Example:` in case of slice, the underlying array will be created with the specified length and capacity.
+
+**What's the difference between composite type and primitive types?**
+  - In computer science, a composite data type or compound data type is any data type which can be constructed in a program using the programming language's primitive data types and other composite types.
