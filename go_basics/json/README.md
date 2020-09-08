@@ -23,3 +23,17 @@
     - *string* option signals that a field is stored as JSON inside a JSON-encoded string.
     - We can use `-` as the options value, if we want to ignore a field unconditionally.
     - However, `-` can also be a valid JSON element key, hence `-`, value will specify that we want the field name to be `-`.
+  - **Decoding JSON:**
+    - Converting JSON string to a valid data structure like map or struct.
+    - `func Valid(data []byte) bool` used to verify if the given JSON byte array is valid or not.
+    - `func Unmarshal(data []byte, v interface{}) error` used to decode JSON string to a valid data structure like map or struct.
+    - Any additional JSON fields, if not declared in the struct, won’t be unmarshalled.
+    - Any unexported fields in strct will not be unmarshalled.
+    - If a field in JSON does not contain the value of the data type declared in the structure, Unmarshal will not coerce that value to an appropriate data type of the field and instead, it will return an error.
+      - A JSON string value is stored as string.
+      - A JSON number value(int or float) is stored as float64.
+      - A JSON boolean value is stored as bool.
+      - A JSON null value is stored as nil value.
+      - A JSON array value is stored as a slice of type []interface{}.
+      - A JSON object value is stored as a map of type map[string]interface{}.
+ 
