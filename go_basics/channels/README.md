@@ -1,0 +1,16 @@
+- **Channels**
+	- Channels can be thought as pipes using which Goroutines communicate.
+	- Each channel has a type associated with it.
+	- This type is the type of data that the channel is allowed to transport.
+	- `chan T` is a channel of type `T`.
+	- The zero value of a channel is `nil`.
+	- `nil` channels are not of any use and hence the channel has to be defined using `make` similar to maps and slices.
+	- `data := <- a` to read from channel `a`.
+	- `a <- data` to write to the channel `a`.
+	- **Sends and Receives are blocking by default**
+		- When we read data from a channel, it will be blocked until some Goroutine writes data to that channel.
+		- Whe we write some data to the channel, it will be blocked until some Goroutine reads from that channel.
+	- **Deadlock** 
+		- If a Goroutine is sending data on a channel, then it is expected that some other Goroutine should be receiving the data.
+		- If this does not happen, then the program will panic at runtime with Deadlock.
+		- If a Goroutine is waiting to receive data from a channel, then some other Goroutine is expected to write data on that channel, else the program will panic.
