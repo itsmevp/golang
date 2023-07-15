@@ -1,4 +1,11 @@
+// https://www.sohamkamani.com/golang/time/
+
 package main
+
+import (
+	"fmt"
+	"time"
+)
 
 /*
 A monotonic clock is a clock that continuously increases at a steady rate, and never goes backwards or jumps ahead.
@@ -7,17 +14,20 @@ Monotonic clocks are used in many applications, such as logging events and timin
 They are particularly useful in distributed systems, where different machines may have slightly different clock settings, and the use of a monotonic clock ensures that all machines are in sync.
 */
 
-import (
-	"fmt"
-	"time"
-)
-
 func main() {
-	current := time.Now().UTC()
-	fmt.Println(current)                      // 2023-03-06 09:33:51.502829 +0530 IST m=+0.000114209
-	fmt.Println(current.Format(time.RFC3339)) // 2023-03-06T04:07:15Z
-	/*
-		2023-03-06T04:07:15Z, the "Z" at the end stands for "Zulu" time or Coordinated Universal Time (UTC).
-		This is a standard way of indicating that the timestamp is in UTC time zone, which is the primary time standard used worldwide in aviation, military, and other industries.
-	*/
+	currentTime := time.Now()
+	// 2023-07-15 10:41:08.846415 +0530 IST m=+0.000127584
+	fmt.Println(currentTime.String())
+
+	// 1689398447
+	fmt.Println(currentTime.Unix())
+
+	// 1689398635151
+	fmt.Println(currentTime.UnixMilli())
+
+	// 1689398535567768
+	fmt.Println(currentTime.UnixMicro())
+
+	// https://pkg.go.dev/time#pkg-constants
+	fmt.Println(currentTime.Format(time.RFC3339))
 }
