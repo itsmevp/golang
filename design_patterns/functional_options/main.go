@@ -17,6 +17,12 @@ func withTLS(opts *opts) {
 	opts.tls = true
 }
 
+func withMaxConn(maxConn int) optFunc {
+	return func(opts *opts) {
+		opts.maxConn = maxConn
+	}
+}
+
 type opts struct {
 	maxConn int
 	timeout int
@@ -39,6 +45,6 @@ func newServer(opts ...optFunc) *server {
 }
 
 func main() {
-	s := newServer(withTLS)
+	s := newServer(withTLS, withMaxConn(20))
 	fmt.Println(s)
 }
